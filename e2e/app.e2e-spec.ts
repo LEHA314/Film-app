@@ -1,10 +1,10 @@
-import { Hw1Page } from './app.po';
+import { FilmAppPage } from './app.po';
 
-describe('hw1 App', () => {
-  let page: Hw1Page;
+describe('film-app App', () => {
+  let page: FilmAppPage;
 
   beforeEach(() => {
-    page = new Hw1Page();
+    page = new FilmAppPage();
   });
 
   it('should display message saying app works', () => {
