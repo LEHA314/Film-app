@@ -16,6 +16,8 @@ import { FilmCardService } from './film-card/film-card.service';
     FilmCardComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    MaterialModule,
     BrowserModule,
     FormsModule,
     HttpModule

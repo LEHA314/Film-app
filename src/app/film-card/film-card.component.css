@@ -1,0 +1,9 @@
+.app-content {
+  margin: 50px auto;
+  max-width: 550px;
+}
+
+.film-card {
+  max-width: 300px;
+  margin-bottom: 50px;
+}
