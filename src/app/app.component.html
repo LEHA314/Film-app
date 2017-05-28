@@ -1,10 +1,13 @@
 <md-toolbar>
   <div class="toolbar-button-row">
-    <a md-button>
-      Menu app
+    <a md-button routerLink="" routerLinkActive="active">
+      Main page
+    </a>
+    <a md-button routerLink="/favorite" routerLinkActive="active">
+      Favorite films
     </a>
   </div>
   <span>List film</span>
 </md-toolbar>
 <br>
-<app-film-card></app-film-card>
+<router-outlet></router-outlet>

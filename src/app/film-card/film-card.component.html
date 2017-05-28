@@ -8,14 +8,14 @@
   <md-grid-tile *ngFor="let film of filmList">
 
     <md-card class="film-card">
-      <img md-card-image src="{{film.Poster}}">
+      <img md-card-image src="https://image.tmdb.org/t/p/w500/{{film.poster_path}}">
       <md-card-content>
-        <md-card-title>{{film.Title}}</md-card-title>
+        <md-card-title>{{film.title}}</md-card-title>
         <p>
-          Год: {{film.Year}}
+          Год: {{film.release_date}}
         </p>
         <p>
-          Lorem ipsun
+          {{film.overview}}
         </p>
       </md-card-content>
       <md-card-actions>
