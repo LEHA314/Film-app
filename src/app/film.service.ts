@@ -21,11 +21,13 @@ export class FilmService {
     return body || {};
   }
 
-  getFilms(filmName: string) {
-    return this.http.get(this.searchUrl + filmName).map(this.extractLisData);
+  getFilms(filmName: string):Observable<any> {
+    return this.http.get(this.searchUrl + filmName).map(this.extractLisData)
+      .catch((error:any)=> {return Observable.throw(error);});
   }
 
-  getFilmById(filmId: string) {
-    return this.http.get(this.filmUrl + filmId).map(this.extractItemData);
+  getFilmById(filmId: string):Observable<any> {
+    return this.http.get(this.filmUrl + filmId).map(this.extractItemData)
+      .catch((error:any)=> {return Observable.throw(error);});
   }
 }
