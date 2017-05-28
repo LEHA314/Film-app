@@ -1,24 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import {FilmCardService} from './film-card.service';
+import {Component, OnInit, Input} from '@angular/core';
+import {FilmService} from '../film.service';
 
 @Component({
-  selector: 'app-film-card',
+  selector: 'film-card',
   templateUrl: './film-card.component.html',
   styleUrls: ['./film-card.component.css']
 })
 export class FilmCardComponent implements OnInit {
-  filmList : object[] = [];
-  filmName: string = '';
-  constructor(private filmCardService: FilmCardService) { }
+  @Input()
+  filmId: string;
+  filmItem: {} = {};
 
-  ngOnInit() {
-    this.filmName = 'Futurama';
-   this.getFilms();
+  constructor(private filmCardService: FilmService) {
   }
 
-  private getFilms() {
-    this.filmCardService.getFilms(this.filmName).subscribe(data => {
-      this.filmList = data;
+  ngOnInit() {
+    if (!this.filmId) {
+      return;
+    }
+    this.filmCardService.getFilmById(this.filmId).subscribe(data => {
+      this.filmItem = data;
     })
   }
 
